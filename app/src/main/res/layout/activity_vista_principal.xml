@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_3"
+    tools:context=".vistaPrincipal">
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="50dp"
+        android:paddingLeft="20dp"
+        android:text="Que calculo deseas hacer hoy"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/ventilacion"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="135dp"
+        android:backgroundTint="@color/teal_700"
+        android:onClick="Ventila"
+        android:text="ventilacion"
+        android:textSize="16dp" />
+
+    <Button
+        android:id="@+id/potencia"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="215dp"
+        android:backgroundTint="@color/teal_700"
+        android:onClick="CalculoPotencia"
+        android:text="potencia"
+        android:textSize="16dp" />
+
+    <Button
+        android:id="@+id/totalizadores"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="295dp"
+        android:backgroundTint="@color/teal_700"
+        android:onClick="totalizador"
+        android:text="Totalizadores"
+        android:textSize="16dp" />
+
+    <Button
+        android:id="@+id/banco"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="375dp"
+        android:backgroundTint="@color/teal_700"
+        android:onClick="condensador"
+        android:text="banco capacitores"
+        android:textSize="16dp" />
+
+    <Button
+        android:id="@+id/trafos"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="455dp"
+        android:backgroundTint="@color/teal_700"
+        android:onClick="Transformador"
+        android:text="transformadores"
+        android:textSize="16dp" />
+
+
+
+</RelativeLayout>
