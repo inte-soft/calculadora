@@ -22,14 +22,14 @@ public class Convertion extends AppCompatActivity {
 
         //Arreglo de las lita desplegable.
         spinner1 = (Spinner)findViewById(R.id.lista_desplegable);
-        String [] listaDatos = {"convertir","va","kva","kvar","w","kw","hp"};
+        String [] listaDatos = {"kva","va","w","kw","hp"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_item_personalizacion, listaDatos);
         spinner1.setAdapter(adapter);
 
         //Arreglo para seleccionar el tipo de sistema.
         spinner2 = (Spinner)findViewById(R.id.sistema);
-        String [] Sistemas = {"Sistema", "Trifasico", "Bifasico", "Monofasico"};
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, R.layout.spinner_item_personalizacion, Sistemas);
+        String [] Fin = {"va","kva","w","kw","hp"};
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, R.layout.spinner_item_personalizacion, Fin);
         spinner2.setAdapter(adapter1);
 
     }
