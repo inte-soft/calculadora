@@ -237,6 +237,44 @@ public class Convertion extends AppCompatActivity {
                             }
                         }
 
+                    // calculos kva
+                    // calculos de kva a w
+                        if (spinner1.getSelectedItem().toString() == "kVA" && spinner2.getSelectedItem().toString() == "W") {
+                            if (fp.getText().toString().isEmpty()) {
+                            Toast toast1 = Toast.makeText(getApplicationContext(), "Ingrese factor de potencia", Toast.LENGTH_SHORT);
+                            toast1.show();
+                            } else {
+                            n1 = (Double.parseDouble(ingvalor.getText().toString()))/Double.parseDouble(fp.getText().toString()) * 1000;
+                            resultado.setText(String.valueOf(String.format("%.2f", n1)));
+                            }
+                        }
+                        // calculos de kva a kva
+                        if (spinner1.getSelectedItem().toString() == "kVA" && spinner2.getSelectedItem().toString() == "kW") {
+                            if (fp.getText().toString().isEmpty()) {
+                            Toast toast1 = Toast.makeText(getApplicationContext(), "Ingrese factor de potencia", Toast.LENGTH_SHORT);
+                            toast1.show();
+                            } else {
+                            n1 = (Double.parseDouble(ingvalor.getText().toString())) * Double.parseDouble(fp.getText().toString());
+                            resultado.setText(String.valueOf(String.format("%.2f", n1)));
+                            }
+                        }
+                        // calculos de kva a hp
+                        if (spinner1.getSelectedItem().toString() == "kVA" && spinner2.getSelectedItem().toString() == "HP") {
+                            if (fp.getText().toString().isEmpty()) {
+                            Toast toast1 = Toast.makeText(getApplicationContext(), "Ingrese factor de potencia", Toast.LENGTH_SHORT);
+                            toast1.show();
+                            } else {
+                            n1 = (Double.parseDouble(ingvalor.getText().toString())) / 746/Double.parseDouble(fp.getText().toString()) * 1000;
+                            resultado.setText(String.valueOf(String.format("%.2f", n1)));
+                            }
+                        }
+                    //calculos de kva a va
+                        if (spinner1.getSelectedItem().toString() == "kVA" && spinner2.getSelectedItem().toString() == "VA") {
+
+                            n1 = (Double.parseDouble(ingvalor.getText().toString())) * 1000;
+                            resultado.setText(String.valueOf(String.format("%.2f", n1)));
+                        }
+
                     // calculos hp
                     // calculos de hp a w
                         if (spinner1.getSelectedItem().toString() == "HP" && spinner2.getSelectedItem().toString() == "W") {
