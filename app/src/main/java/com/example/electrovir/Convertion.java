@@ -165,7 +165,7 @@ public class Convertion extends AppCompatActivity {
                     // calculos de w a kw
                         if (spinner1.getSelectedItem().toString() == "W" && spinner2.getSelectedItem().toString() == "kW") {
 
-                                n1 = (Double.parseDouble(ingvalor.getText().toString())) * 1000;
+                                n1 = (Double.parseDouble(ingvalor.getText().toString())) / 1000;
                                 resultado.setText(String.valueOf(String.format("%.2f", n1)));
 
                         }
