@@ -30,7 +30,8 @@
         android:backgroundTint="@color/teal_700"
         android:onClick="Ventila"
         android:text="ventilacion"
-        android:textSize="16dp" />
+        android:textSize="16dp"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/potencia"
@@ -54,7 +55,8 @@
         android:backgroundTint="@color/teal_700"
         android:onClick="totalizador"
         android:text="Totalizadores"
-        android:textSize="16dp" />
+        android:textSize="16dp"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/banco"
@@ -66,7 +68,8 @@
         android:backgroundTint="@color/teal_700"
         android:onClick="condensador"
         android:text="banco capacitores"
-        android:textSize="16dp" />
+        android:textSize="16dp"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/trafos"
@@ -78,7 +81,8 @@
         android:backgroundTint="@color/teal_700"
         android:onClick="Transformador"
         android:text="transformadores"
-        android:textSize="16dp" />
+        android:textSize="16dp"
+        android:visibility="invisible" />
 
 
 
