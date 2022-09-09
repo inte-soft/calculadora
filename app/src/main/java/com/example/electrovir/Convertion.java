@@ -59,7 +59,11 @@ public class Convertion extends AppCompatActivity {
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if (((spinner1.getSelectedItem().toString()=="W")|| (spinner1.getSelectedItem().toString()=="kW") || (spinner1.getSelectedItem().toString()=="HP"))||((spinner2.getSelectedItem().toString()=="HP")||(spinner2.getSelectedItem().toString()=="W")||(spinner2.getSelectedItem().toString()=="kW"))){
+                if (((spinner1.getSelectedItem().toString()=="W")|| (spinner1.getSelectedItem().toString()=="kW") || (spinner1.getSelectedItem().toString()=="HP"))&&((spinner2.getSelectedItem().toString()=="VA")||(spinner2.getSelectedItem().toString()=="kVA"))){
+                    fp.setVisibility(View.VISIBLE);
+                    label_fp.setVisibility(View.VISIBLE);
+
+                }else if (((spinner1.getSelectedItem().toString()=="VA")|| (spinner1.getSelectedItem().toString()=="kVA"))&&((spinner2.getSelectedItem().toString()=="HP")||(spinner2.getSelectedItem().toString()=="kW")||(spinner2.getSelectedItem().toString()=="W"))){
                     fp.setVisibility(View.VISIBLE);
                     label_fp.setVisibility(View.VISIBLE);
 
@@ -80,7 +84,11 @@ public class Convertion extends AppCompatActivity {
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if (((spinner2.getSelectedItem().toString()=="W")|| (spinner2.getSelectedItem().toString()=="kW") || (spinner2.getSelectedItem().toString()=="HP"))||((spinner1.getSelectedItem().toString()=="HP")||(spinner1.getSelectedItem().toString()=="W")||(spinner1.getSelectedItem().toString()=="kW")) ){
+                if (((spinner2.getSelectedItem().toString()=="W")|| (spinner2.getSelectedItem().toString()=="kW") || (spinner2.getSelectedItem().toString()=="HP"))&&((spinner1.getSelectedItem().toString()=="VA")||(spinner1.getSelectedItem().toString()=="kVA")) ){
+                    fp.setVisibility(View.VISIBLE);
+                    label_fp.setVisibility(View.VISIBLE);
+
+                }else if (((spinner2.getSelectedItem().toString()=="VA")|| (spinner2.getSelectedItem().toString()=="kVA"))&&((spinner1.getSelectedItem().toString()=="W")||(spinner1.getSelectedItem().toString()=="HP")||(spinner1.getSelectedItem().toString()=="kW")) ){
                     fp.setVisibility(View.VISIBLE);
                     label_fp.setVisibility(View.VISIBLE);
 
@@ -156,13 +164,10 @@ public class Convertion extends AppCompatActivity {
                     // calculos w
                     // calculos de w a kw
                         if (spinner1.getSelectedItem().toString() == "W" && spinner2.getSelectedItem().toString() == "kW") {
-                            if (fp.getText().toString().isEmpty()) {
-                                Toast toast1 = Toast.makeText(getApplicationContext(), "Ingrese factor de potencia", Toast.LENGTH_SHORT);
-                                toast1.show();
-                            } else {
+
                                 n1 = (Double.parseDouble(ingvalor.getText().toString())) * 1000;
                                 resultado.setText(String.valueOf(String.format("%.2f", n1)));
-                            }
+
                         }
                     // calculos de w a kva
                         if (spinner1.getSelectedItem().toString() == "W" && spinner2.getSelectedItem().toString() == "kVA") {
@@ -176,13 +181,10 @@ public class Convertion extends AppCompatActivity {
                         }
                     // calculos de w a hp
                         if (spinner1.getSelectedItem().toString() == "W" && spinner2.getSelectedItem().toString() == "HP") {
-                            if (fp.getText().toString().isEmpty()) {
-                                Toast toast1 = Toast.makeText(getApplicationContext(), "Ingrese factor de potencia", Toast.LENGTH_SHORT);
-                                toast1.show();
-                            } else {
+
                                 n1 = (Double.parseDouble(ingvalor.getText().toString())) / 746;
                                 resultado.setText(String.valueOf(String.format("%.2f", n1)));
-                            }
+
                         }
                     //calculos de w a va
                         if (spinner1.getSelectedItem().toString() == "W" && spinner2.getSelectedItem().toString() == "VA") {
@@ -198,13 +200,10 @@ public class Convertion extends AppCompatActivity {
                     // calculos kw
                     // calculos de kw a w
                         if (spinner1.getSelectedItem().toString() == "kW" && spinner2.getSelectedItem().toString() == "W") {
-                            if (fp.getText().toString().isEmpty()) {
-                                Toast toast1 = Toast.makeText(getApplicationContext(), "Ingrese factor de potencia", Toast.LENGTH_SHORT);
-                                toast1.show();
-                            } else {
+
                                 n1 = (Double.parseDouble(ingvalor.getText().toString())) * 1000;
                                 resultado.setText(String.valueOf(String.format("%.2f", n1)));
-                            }
+
                         }
                     // calculos de kw a kva
                         if (spinner1.getSelectedItem().toString() == "kW" && spinner2.getSelectedItem().toString() == "kVA") {
@@ -218,13 +217,10 @@ public class Convertion extends AppCompatActivity {
                         }
                     // calculos de kw a hp
                         if (spinner1.getSelectedItem().toString() == "kW" && spinner2.getSelectedItem().toString() == "HP") {
-                            if (fp.getText().toString().isEmpty()) {
-                                Toast toast1 = Toast.makeText(getApplicationContext(), "Ingrese factor de potencia", Toast.LENGTH_SHORT);
-                                toast1.show();
-                            } else {
+
                                 n1 = (Double.parseDouble(ingvalor.getText().toString())) / 746 * 1000;
                                 resultado.setText(String.valueOf(String.format("%.2f", n1)));
-                            }
+
                         }
                     //calculos de kw a va
                         if (spinner1.getSelectedItem().toString() == "kW" && spinner2.getSelectedItem().toString() == "VA") {
@@ -278,13 +274,10 @@ public class Convertion extends AppCompatActivity {
                     // calculos hp
                     // calculos de hp a w
                         if (spinner1.getSelectedItem().toString() == "HP" && spinner2.getSelectedItem().toString() == "W") {
-                            if (fp.getText().toString().isEmpty()) {
-                                Toast toast1 = Toast.makeText(getApplicationContext(), "Ingrese factor de potencia", Toast.LENGTH_SHORT);
-                                toast1.show();
-                            } else {
+
                                 n1 = (Double.parseDouble(ingvalor.getText().toString())) * 746;
                                 resultado.setText(String.valueOf(String.format("%.2f", n1)));
-                            }
+
                         }
                     // calculos de hp a kva
                         if (spinner1.getSelectedItem().toString() == "HP" && spinner2.getSelectedItem().toString() == "kVA") {
@@ -298,13 +291,10 @@ public class Convertion extends AppCompatActivity {
                         }
                     // calculos de hp a kw
                         if (spinner1.getSelectedItem().toString() == "HP" && spinner2.getSelectedItem().toString() == "kW") {
-                            if (fp.getText().toString().isEmpty()) {
-                                Toast toast1 = Toast.makeText(getApplicationContext(), "Ingrese factor de potencia", Toast.LENGTH_SHORT);
-                                toast1.show();
-                            } else {
+
                                 n1 = (Double.parseDouble(ingvalor.getText().toString())) / 746 / 1000;
                                 resultado.setText(String.valueOf(String.format("%.2f", n1)));
-                            }
+
                         }
                     //calculos de hp a va
                         if (spinner1.getSelectedItem().toString() == "HP" && spinner2.getSelectedItem().toString() == "VA") {
