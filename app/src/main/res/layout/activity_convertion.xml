@@ -164,20 +164,7 @@
         app:layout_constraintStart_toEndOf="@+id/resultado"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
-    <Button
-        android:id="@+id/calcular"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="45dp"
-        android:backgroundTint="@color/teal_700"
-        android:text="calcular"
-        android:textSize="16dp"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fp" />
+
 
     <Button
         android:id="@+id/borrar"
