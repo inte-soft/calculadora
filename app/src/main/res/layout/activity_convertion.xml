@@ -10,7 +10,7 @@
     tools:layout_editor_absoluteY="25dp">
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/label_factorp"
         android:layout_width="160dp"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
@@ -110,7 +110,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/lista_desplegable"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/label_factorp" />
 
     <Button
         android:id="@+id/calcular"
@@ -124,10 +124,10 @@
         android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fp" />
+        app:layout_constraintTop_toBottomOf="@+id/fp1" />
 
     <EditText
-        android:id="@+id/fp"
+        android:id="@+id/fp1"
         android:layout_width="150sp"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
@@ -151,7 +151,7 @@
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ingvalor"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/label_factorp" />
 
     <Spinner
         android:id="@+id/sistema"

@@ -9,6 +9,37 @@
     tools:layout_editor_absoluteY="25dp">
 
 
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="215dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="61dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Siatema"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:guidelineUseRtl="false"
+        app:layout_constraintEnd_toStartOf="@+id/sistema1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="0dp"
+        android:layout_height="61dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Voltaje"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:guidelineUseRtl="false"
+        app:layout_constraintEnd_toStartOf="@+id/volt"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ingvalor1" />
+
     <Button
         android:id="@+id/volver2"
         android:layout_width="85dp"
@@ -37,39 +68,38 @@
         android:textStyle="bold"
         app:guidelineUseRtl="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/label_factorp"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
+        android:layout_height="61dp"
         android:gravity="center_horizontal|center_vertical"
-        android:text="Factor de potencia"
+        android:text="FP"
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold"
         app:guidelineUseRtl="false"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fp1"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sistema1" />
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="25dp"
         android:text="El resultado es:"
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.445"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
     <TextView
         android:id="@+id/resultado"
@@ -90,14 +120,13 @@
         tools:ignore="RtlCompat" />
 
     <EditText
-        android:id="@+id/ingvalor"
-        android:layout_width="220dp"
+        android:id="@+id/ingvalor1"
+        android:layout_width="0dp"
         android:layout_height="53dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="32dp"
         android:hint="Ingrese valor"
         android:inputType="numberDecimal"
-        android:text=" "
         android:textAlignment="center"
         android:textColorHint="@color/black"
         android:textSize="19dp"
@@ -108,44 +137,56 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/fp"
-        android:layout_width="220dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="10dp"
-        android:hint="0.9"
+        android:id="@+id/volt"
+        android:layout_width="149dp"
+        android:layout_height="49dp"
+        android:hint="Ingrese valor"
         android:inputType="numberDecimal"
-        android:text=" "
         android:textAlignment="center"
         android:textColorHint="@color/black"
         android:textSize="19dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintStart_toEndOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/potencia" />
+
+    <EditText
+        android:id="@+id/fp1"
+        android:layout_width="156dp"
+        android:layout_height="67dp"
+        android:hint="0.9"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColorHint="@color/black"
+        android:textSize="19dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/label_factorp"
+        app:layout_constraintTop_toBottomOf="@+id/volt" />
 
     <Spinner
         android:id="@+id/potencia"
         android:layout_width="0dp"
         android:layout_height="70dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/ingvalor"
+        app:layout_constraintStart_toEndOf="@+id/ingvalor1"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <Spinner
         android:id="@+id/sistema1"
-        android:layout_width="0dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="45dp"
+        android:layout_width="180dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ingvalor" />
+        app:layout_constraintStart_toEndOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/volt" />
 
     <Button
         android:id="@+id/borrar1"

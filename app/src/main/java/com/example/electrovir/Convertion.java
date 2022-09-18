@@ -13,8 +13,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
 public class Convertion extends AppCompatActivity {
 
     private Spinner spinner1;
@@ -45,7 +43,7 @@ public class Convertion extends AppCompatActivity {
 
         //arreglo edit text
         ingvalor = (EditText) findViewById(R.id.ingvalor);
-        fp = (EditText) findViewById(R.id.fp);
+        fp = (EditText) findViewById(R.id.fp1);
 
         //arreglo text view
         resultado= (TextView) findViewById(R.id.resultado);
