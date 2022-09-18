@@ -95,9 +95,9 @@ public class Calculototalizadores extends AppCompatActivity {
                     Toast toast4 = Toast.makeText(getApplicationContext(), "Ingrese voltaje", Toast.LENGTH_SHORT);
                     toast4.show();
 
-                }else if (fp1.getText().toString().isEmpty()) {
-                    Toast toast4 = Toast.makeText(getApplicationContext(), "Ingrese factor de potencia", Toast.LENGTH_SHORT);
-                    toast4.show();
+                }else if (((spinner3.getSelectedItem().toString()=="kVA")||(spinner3.getSelectedItem().toString()=="VA")||(spinner3.getSelectedItem().toString()=="kVAR"))&&(fp1.getText().toString().isEmpty())) {
+                        Toast toast4 = Toast.makeText(getApplicationContext(), "Ingrese factor de potencia", Toast.LENGTH_SHORT);
+                        toast4.show();
 
                 //calculo para sistemas trifasicos
                 }else {
@@ -128,7 +128,7 @@ public class Calculototalizadores extends AppCompatActivity {
                             resultado.setText(String.valueOf(String.format("%.2f", n1)));
                         }
                         // calculo totalizador para potencia en w
-                        if (spinner3.getSelectedItem().toString() == "VA") {
+                        if (spinner3.getSelectedItem().toString() == "W") {
                             n1 = (p / (v * Math.sqrt(3))) * 1.25;
                             resultado.setText(String.valueOf(String.format("%.2f", n1)));
                         }
