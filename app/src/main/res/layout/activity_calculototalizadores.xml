@@ -1,21 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo_3"
-    tools:context=".Calculototalizadores">
+    tools:context=".Calculototalizadores"
+    tools:layout_editor_absoluteY="25dp">
 
 
     <Button
         android:id="@+id/volver2"
-        android:layout_width="70dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="735dp"
+        android:layout_width="85dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/regresar"
         android:backgroundTint="@color/teal_700"
         android:onClick="Regresar2"
-        android:textSize="16dp" />
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="CALCULO DE TOTALIZADORES"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:guidelineUseRtl="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Factor de potencia"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:guidelineUseRtl="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sistema1" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:text="El resultado es:"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fp" />
+
+    <TextView
+        android:id="@+id/resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="52dp"
+        android:background="@color/white"
+        android:hint="Resultado"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        tools:ignore="RtlCompat" />
+
+    <EditText
+        android:id="@+id/ingvalor"
+        android:layout_width="220dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="36dp"
+        android:hint="Ingrese valor"
+        android:inputType="numberDecimal"
+        android:text=" "
+        android:textAlignment="center"
+        android:textColorHint="@color/black"
+        android:textSize="19dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/potencia"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <EditText
+        android:id="@+id/fp"
+        android:layout_width="220dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="32dp"
+        android:hint="0.9"
+        android:inputType="numberDecimal"
+        android:text=" "
+        android:textAlignment="center"
+        android:textColorHint="@color/black"
+        android:textSize="19dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <Spinner
+        android:id="@+id/potencia"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ingvalor"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <Spinner
+        android:id="@+id/sistema1"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="45dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ingvalor" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

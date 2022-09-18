@@ -56,7 +56,7 @@
         android:onClick="totalizador"
         android:text="Totalizadores"
         android:textSize="16dp"
-        android:visibility="invisible" />
+        android:visibility="visible" />
 
     <Button
         android:id="@+id/banco"

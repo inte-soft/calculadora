@@ -31,8 +31,8 @@ public class vistaPrincipal extends AppCompatActivity {
 
     //Metodo para llamar una activity totalizadores
     public void totalizador(View view){
-        Intent breaker = new Intent(this,CalculoVentilacion.class);
-        startActivity(breaker);
+        Intent siguiente2 = new Intent(this,Calculototalizadores.class);
+        startActivity(siguiente2);
         finish();
     }
 
