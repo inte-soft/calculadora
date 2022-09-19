@@ -95,13 +95,13 @@ public class Calculototalizadores extends AppCompatActivity {
                     Toast toast4 = Toast.makeText(getApplicationContext(), "Ingrese voltaje", Toast.LENGTH_SHORT);
                     toast4.show();
 
-                }else if (((spinner3.getSelectedItem().toString()=="kVA")||(spinner3.getSelectedItem().toString()=="VA")||(spinner3.getSelectedItem().toString()=="kVAR"))&&(fp1.getText().toString().isEmpty())) {
+                }else if (((spinner3.getSelectedItem().toString()=="kVA")||(spinner3.getSelectedItem().toString()=="VA"))&&(fp1.getText().toString().isEmpty())) {
                         Toast toast4 = Toast.makeText(getApplicationContext(), "Ingrese factor de potencia", Toast.LENGTH_SHORT);
                         toast4.show();
 
                 //calculo para sistemas trifasicos
                 }else {
-                    fp2 = Double.parseDouble(fp1.getText().toString());
+
                     v = Double.parseDouble(voltaje.getText().toString());
                     p = Double.parseDouble(ingvalor1.getText().toString());
 
@@ -109,28 +109,30 @@ public class Calculototalizadores extends AppCompatActivity {
 
                         // calculo totalizador para potencia en va
                         if (spinner3.getSelectedItem().toString() == "VA") {
+                            fp2 = Double.parseDouble(fp1.getText().toString());
                             n1 = (p / (v * Math.sqrt(3) * fp2)) * 1.25;
-                            resultado.setText(String.valueOf(String.format("%.2f", n1)));
+                            resultado.setText(String.valueOf(String.format("%.2f A", n1)));
                         }
                         // calculo totalizador para potencia en kva
                         if (spinner3.getSelectedItem().toString() == "kVA") {
+                            fp2 = Double.parseDouble(fp1.getText().toString());
                             n1 = ((p * 1000) / (v * Math.sqrt(3) * fp2)) * 1.25;
-                            resultado.setText(String.valueOf(String.format("%.2f", n1)));
+                            resultado.setText(String.valueOf(String.format("%.2f A", n1)));
                         }
                         // calculo totalizador para potencia en kvar
                         if (spinner3.getSelectedItem().toString() == "kVAR") {
                             n1 = ((p * 1000) / (v * Math.sqrt(3))) * 1.35;
-                            resultado.setText(String.valueOf(String.format("%.2f", n1)));
+                            resultado.setText(String.valueOf(String.format("%.2f A", n1)));
                         }
                         // calculo totalizador para potencia en kW
                         if (spinner3.getSelectedItem().toString() == "kW") {
                             n1 = ((p * 1000) / (v * Math.sqrt(3))) * 1.25;
-                            resultado.setText(String.valueOf(String.format("%.2f", n1)));
+                            resultado.setText(String.valueOf(String.format("%.2f A", n1)));
                         }
                         // calculo totalizador para potencia en w
                         if (spinner3.getSelectedItem().toString() == "W") {
                             n1 = (p / (v * Math.sqrt(3))) * 1.25;
-                            resultado.setText(String.valueOf(String.format("%.2f", n1)));
+                            resultado.setText(String.valueOf(String.format("%.2f A", n1)));
                         }
                     }
 
@@ -138,56 +140,60 @@ public class Calculototalizadores extends AppCompatActivity {
                     if (spinner4.getSelectedItem().toString() == "Bifasico") {
                         // calculo totalizador para potencia en va
                         if (spinner3.getSelectedItem().toString() == "VA") {
+                            fp2 = Double.parseDouble(fp1.getText().toString());
                             n1 = (p / (v * Math.sqrt(2) * fp2)) * 1.25;
-                            resultado.setText(String.valueOf(String.format("%.2f", n1)));
+                            resultado.setText(String.valueOf(String.format("%.2f A", n1)));
                         }
                         // calculo totalizador para potencia en kva
                         if (spinner3.getSelectedItem().toString() == "kVA") {
+                            fp2 = Double.parseDouble(fp1.getText().toString());
                             n1 = ((p * 1000) / (v * Math.sqrt(2) * fp2)) * 1.25;
-                            resultado.setText(String.valueOf(String.format("%.2f", n1)));
+                            resultado.setText(String.valueOf(String.format("%.2f A", n1)));
                         }
                         // calculo totalizador para potencia en kvar
                         if (spinner3.getSelectedItem().toString() == "kVAR") {
                             n1 = ((p * 1000) / (v * Math.sqrt(2) * fp2)) * 1.35;
-                            resultado.setText(String.valueOf(String.format("%.2f", n1)));
+                            resultado.setText(String.valueOf(String.format("%.2f A", n1)));
                         }
                         // calculo totalizador para potencia en kW
                         if (spinner3.getSelectedItem().toString() == "kW") {
                             n1 = ((p * 1000) / (v * Math.sqrt(2))) * 1.25;
-                            resultado.setText(String.valueOf(String.format("%.2f", n1)));
+                            resultado.setText(String.valueOf(String.format("%.2f A", n1)));
                         }
                         // calculo totalizador para potencia en w
-                        if (spinner3.getSelectedItem().toString() == "VA") {
+                        if (spinner3.getSelectedItem().toString() == "W") {
                             n1 = (p / (v * Math.sqrt(2))) * 1.25;
-                            resultado.setText(String.valueOf(String.format("%.2f", n1)));
+                            resultado.setText(String.valueOf(String.format("%.2f A", n1)));
                         }
                     }
                         //calculo para sistemas monofasicos
                     if (spinner4.getSelectedItem().toString() == "Monofasico") {
                             // calculo totalizador para potencia en va
                             if (spinner3.getSelectedItem().toString() == "VA") {
+                                fp2 = Double.parseDouble(fp1.getText().toString());
                                 n1 = (p / (v * fp2)) * 1.25;
-                                resultado.setText(String.valueOf(String.format("%.2f", n1)));
+                                resultado.setText(String.valueOf(String.format("%.2f A", n1)));
                             }
                             // calculo totalizador para potencia en kva
                             if (spinner3.getSelectedItem().toString() == "kVA") {
+                                fp2 = Double.parseDouble(fp1.getText().toString());
                                 n1 = ((p * 1000) / (v * fp2)) * 1.25;
-                                resultado.setText(String.valueOf(String.format("%.2f", n1)));
+                                resultado.setText(String.valueOf(String.format("%.2f A", n1)));
                             }
                             // calculo totalizador para potencia en kvar
                             if (spinner3.getSelectedItem().toString() == "kVAR") {
                                 n1 = ((p * 1000) / (v * fp2)) * 1.35;
-                                resultado.setText(String.valueOf(String.format("%.2f", n1)));
+                                resultado.setText(String.valueOf(String.format("%.2f A", n1)));
                             }
                             // calculo totalizador para potencia en kW
                             if (spinner3.getSelectedItem().toString() == "kW") {
                                 n1 = ((p * 1000) / (v)) * 1.25;
-                                resultado.setText(String.valueOf(String.format("%.2f", n1)));
+                                resultado.setText(String.valueOf(String.format("%.2f A", n1)));
                             }
                             // calculo totalizador para potencia en w
-                            if (spinner3.getSelectedItem().toString() == "VA") {
+                            if (spinner3.getSelectedItem().toString() == "W") {
                                 n1 = (p / (v)) * 1.25;
-                                resultado.setText(String.valueOf(String.format("%.2f", n1)));
+                                resultado.setText(String.valueOf(String.format("%.2f A", n1)));
                             }
                     }
                 }
