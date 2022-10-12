@@ -16,20 +16,18 @@ public class CalculoCobre extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculo_cobre);
+
+        //Arreglo de las lista desplegable cobre.
+        cobre = (Spinner)findViewById(R.id.lcobre);
+        String [] lDatos = {" ","Barras","Laminilla"};
+        ArrayAdapter<String> adaptercobre = new ArrayAdapter<String>(this, R.layout.spinner_item_personalizacion, lDatos);
+        cobre.setAdapter(adaptercobre);
     }
-
-
-    //Arreglo de las lista desplegable cobre.
-    cobre = (Spinner)findViewById(R.id.lcobre);
-    String [] lDatos = {" ","Barras","Laminilla"};
-    ArrayAdapter<String> adaptercobre = new ArrayAdapter<String>(this, R.layout.spinner_item_personalizacion, lDatos);
-    cobre.setAdapter(adaptercobre);
 
     public void Regresarcobre(View view){
         Intent regresarcobre1 = new Intent(this,vistaPrincipal.class);
         startActivity(regresarcobre1);
         finish();
     }
-
 
 }

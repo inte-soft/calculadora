@@ -21,13 +21,12 @@ public class vistaPrincipal extends AppCompatActivity {
         finish();
     }
 
-    //Metodo para llamar una activity ventilacion
-    public void Ventila(View view){
-        Intent ventilar = new Intent(this,CalculoVentilacion.class);
-        startActivity(ventilar);
+    //Metodo para llamar una activity cobre
+    public void Cu(View view){
+        Intent cobre1 = new Intent(this,CalculoCobre.class);
+        startActivity(cobre1);
         finish();
     }
-
 
     //Metodo para llamar una activity totalizadores
     public void totalizador(View view){
