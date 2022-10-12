@@ -10,7 +10,7 @@ import android.widget.Spinner;
 
 public class CalculoCobre extends AppCompatActivity {
 
-    private Spinner cobre;
+    private Spinner cobre1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,10 +18,10 @@ public class CalculoCobre extends AppCompatActivity {
         setContentView(R.layout.activity_calculo_cobre);
 
         //Arreglo de las lista desplegable cobre.
-        cobre = (Spinner)findViewById(R.id.lcobre);
+        cobre1 = (Spinner)findViewById(R.id.lcobre);
         String [] lDatos = {" ","Barras","Laminilla"};
         ArrayAdapter<String> adaptercobre = new ArrayAdapter<String>(this, R.layout.spinner_item_personalizacion, lDatos);
-        cobre.setAdapter(adaptercobre);
+        cobre1.setAdapter(adaptercobre);
     }
 
     public void Regresarcobre(View view){

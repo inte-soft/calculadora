@@ -8,7 +8,7 @@
     tools:context=".CalculoCobre">
 
     <Button
-        android:id="@+id/borrar2"
+        android:id="@+id/borrarcu1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginLeft="45dp"
@@ -16,6 +16,7 @@
         android:layout_marginRight="45dp"
         android:backgroundTint="@color/teal_700"
         android:text="borrar datos"
+        android:textColor="#000000"
         android:textSize="16dp"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -78,7 +79,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewcu1" />
 
     <EditText
         android:id="@+id/ingcorrientecu"
@@ -105,13 +106,15 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="20dp"
+        android:hint=" "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label_corriente" />
+        app:layout_constraintTop_toBottomOf="@+id/label_corriente"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textViewcu1"
         android:layout_width="80dp"
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
@@ -136,19 +139,19 @@
         android:backgroundTint="@color/teal_700"
         android:onClick="Regresarcobre"
         android:textSize="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/textView5"
+        app:layout_constraintEnd_toStartOf="@+id/textViewcu1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
         android:layout_width="308dp"
-        android:layout_height="47dp"
+        android:layout_height="48dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/borrar2" />
+        app:layout_constraintTop_toBottomOf="@+id/borrarcu1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

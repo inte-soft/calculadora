@@ -290,7 +290,7 @@ public class Convertion extends AppCompatActivity {
                     // calculos de hp a kw
                         if (spinner1.getSelectedItem().toString() == "HP" && spinner2.getSelectedItem().toString() == "kW") {
 
-                                n1 = (Double.parseDouble(ingvalor.getText().toString())) / 746 / 1000;
+                                n1 = (Double.parseDouble(ingvalor.getText().toString())) * 746 / 1000;
                                 resultado.setText(String.valueOf(String.format("%.2f", n1)));
 
                         }
