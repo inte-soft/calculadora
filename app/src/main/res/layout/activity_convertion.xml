@@ -103,7 +103,6 @@
         android:layout_marginEnd="5dp"
         android:hint="Convertir"
         android:inputType="numberDecimal"
-        android:text=" "
         android:textAlignment="center"
         android:textColorHint="@color/black"
         android:textSize="19dp"

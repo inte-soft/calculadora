@@ -188,10 +188,15 @@ public class CalculoCobre extends AppCompatActivity {
                 //validacion si ha seleccionado laminilla en el spinner
                 } else if (cobre1.getSelectedItem().toString() == "Laminilla") {
                     //validacion si ha ingresado la corriente para realizar el calculo de las laminillas.
-                    if(valcurrent.getText().toString().isEmpty()){
+                    if(valcurrent.getText().toString().isEmpty()) {
                         //escribir mensaje indicandole al usuario que debe ingresar una corriente par poder realizar el calculo
                         Toast toast2 = Toast.makeText(getApplicationContext(), "Ingrese Corriente", Toast.LENGTH_SHORT);
                         toast2.show();
+                    //validacion campo de borne vacio
+                    }else if(borne.getText().toString().isEmpty()){
+                        //escribir mensaje indicandole al usuario que debe ingresar un tamaño de borne
+                        Toast toast4 = Toast.makeText(getApplicationContext(), "Ingrese borne", Toast.LENGTH_SHORT);
+                        toast4.show();
                     //calculo para todos los tipos de laminillas.
                     } else {
                         Double nlam1 = Double.parseDouble(valcurrent.getText().toString()) / (2 * 0.9*Double.parseDouble(borne.getText().toString()));
