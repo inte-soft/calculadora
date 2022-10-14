@@ -12,18 +12,19 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import java.util.*;
 import android.widget.*;
-
-
 import java.util.Hashtable;
 
 public class CalculoCobre extends AppCompatActivity {
 
     private Spinner cobre1;
     private Button calccu;
+    private Button borrarcu;
     private EditText valcurrent;
     private ListView result_list;
     private ArrayList<String> names;
     private TextView resultadocobre;
+    private EditText borne;
+    private TextView labelborne;
 
 
 
@@ -39,11 +40,16 @@ public class CalculoCobre extends AppCompatActivity {
         valcurrent= (EditText)findViewById(R.id.ingcorrientecu);
         //definir boton calcular
         calccu= (Button)findViewById(R.id.calcular_cobre2);
+        //definir boton borrar
+        borrarcu= (Button)findViewById(R.id.borrarcu1);
         //Arreglo de las lista desplegable cobre.
         cobre1 = (Spinner)findViewById(R.id.lcobre);
-        String [] lDatos = {" ","Barras","Laminilla"};
+        String [] lDatos = {"","Barras","Laminilla"};
         ArrayAdapter<String> adaptercobre = new ArrayAdapter<String>(this, R.layout.spinner_item_personalizacion, lDatos);
         cobre1.setAdapter(adaptercobre);
+        //definir edit text para borne de laminilla
+        borne=(EditText) findViewById(R.id.ingborne);
+        labelborne=(TextView) findViewById(R.id.label_borne);
 
 
         //declaracion de diccionario
@@ -139,66 +145,144 @@ public class CalculoCobre extends AppCompatActivity {
         corrientes_barras .put(5610,"200x10 3 Barras");
         corrientes_barras .put(6540,"200x10 4 Barras");
         }
+        //arreglo para inhabilitar factor de potencia
+        cobre1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (cobre1.getSelectedItem().toString()=="Laminilla" ){
+                    labelborne.setVisibility(View.VISIBLE);
+                    borne.setVisibility(View.VISIBLE);
 
+
+                }else{
+
+                    borne.setVisibility(View.GONE);
+                    labelborne.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         calccu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //declaracion de variable para el limite superior de la corriente
                 double nsup = 0;
+                //decalracion de la variable para el limite inferior de la corriente
                 double ninf = 0;
+
+                //creacion de arraylist para almacenar las claves del diccionario de corrientes y barras
                 ArrayList<Integer> corrientes_list = new ArrayList<Integer>(corrientes_barras.keySet());
-                ArrayList<String> result_list = new ArrayList<String>();
-                ArrayList<Integer> result_listdes = new ArrayList<Integer>();
+                //creacion de arraylist para almacenar las corrientes que se pueden utilizar segun la corriente que el usuari ingrese.
+                ArrayList<Integer> result_list = new ArrayList<Integer>();
 
-                if(valcurrent.getText().toString() == "") {
-                    Toast toast1 = Toast.makeText(getApplicationContext(), "Ingrese Corriente", Toast.LENGTH_SHORT);
+                // validacion de si el spinner esta vacio
+                if (cobre1.getSelectedItem().toString()=="") {
+                    //escribir mensaje indicandole al usuario que debe seleccionar un tipo de material para realizar los calculos
+                    Toast toast1 = Toast.makeText(getApplicationContext(), "Seleccione Material", Toast.LENGTH_SHORT);
                     toast1.show();
-                }else{
-                    if (Double.parseDouble(valcurrent.getText().toString()) <= 1200) {
-                        nsup = Double.parseDouble(valcurrent.getText().toString()) + 100;
-                        ninf = Double.parseDouble(valcurrent.getText().toString());
+                //validacion si ha seleccionado laminilla en el spinner
+                } else if (cobre1.getSelectedItem().toString() == "Laminilla") {
+                    //validacion si ha ingresado la corriente para realizar el calculo de las laminillas.
+                    if(valcurrent.getText().toString().isEmpty()){
+                        //escribir mensaje indicandole al usuario que debe ingresar una corriente par poder realizar el calculo
+                        Toast toast2 = Toast.makeText(getApplicationContext(), "Ingrese Corriente", Toast.LENGTH_SHORT);
+                        toast2.show();
+                    //calculo para todos los tipos de laminillas.
                     } else {
+                        Double nlam1 = Double.parseDouble(valcurrent.getText().toString()) / (2 * 0.9*Double.parseDouble(borne.getText().toString()));
+                        Double nlam2 = Double.parseDouble(valcurrent.getText().toString()) / (2 * 0.8*Double.parseDouble(borne.getText().toString()));
+                        Double nlam3 = Double.parseDouble(valcurrent.getText().toString()) / (2 * 0.7*Double.parseDouble(borne.getText().toString()));
+                        Double nlam4 = Double.parseDouble(valcurrent.getText().toString()) / (2 * 0.6*Double.parseDouble(borne.getText().toString()));
+                        Double nlam5 = Double.parseDouble(valcurrent.getText().toString()) / (2 * 0.5*Double.parseDouble(borne.getText().toString()));
+                        //escrbir el resultado de los calculos en el tex view del resultado
+                        resultadocobre.setText(String.valueOf(String.format("%.2f", nlam1))+" Laminillas de 0.9mm"+"\n"
+                                +String.valueOf(String.format("%.1f", nlam2))+" Laminillas de 0.8mm"+"\n"
+                                +String.valueOf(String.format("%.1f", nlam3))+" Laminillas de 0.7mm"+"\n"
+                                +String.valueOf(String.format("%.1f", nlam4))+" Laminillas de 0.6mm"+"\n"
+                                +String.valueOf(String.format("%.2f", nlam5))+" Laminillas de 0.5mm"+"\n");
+                    }
+
+                //validacion si ha sellecionado cobre en el spinner
+                } else if (cobre1.getSelectedItem().toString() == "Barras") {
+                    //validacion si el campo de ingreso de corriente se encuentra vacio.
+                    if (valcurrent.getText().toString().isEmpty()) {
+                        //escribir mensaje indicandole al usuario que debe ingresar una corriente par poder realizar el calculo
+                        Toast toast3 = Toast.makeText(getApplicationContext(), "Ingrese Corriente", Toast.LENGTH_SHORT);
+                        toast3.show();
+                    //definir limite superiro e inferior segunla corriente que sel usuario ingreso en este caso para menores de 1201
+                    } else if (Double.parseDouble(valcurrent.getText().toString()) <= 1200) {
+                        nsup = Double.parseDouble(valcurrent.getText().toString()) + 100;
+                        ninf = Double.parseDouble(valcurrent.getText().toString())-10;
+
+                        //iteracion para hallar cuales son las corrientes que se encuentran en el rango de la corriente del usuario
+                        for (int x = 0; x < corrientes_list.size(); x++) {
+                            Integer it = corrientes_list.get(x);
+                            if ((it >= ninf) && (it <= nsup)) {
+                                result_list.add((corrientes_list.get(x)));
+                                it = 0;
+                            } else {
+                                it = 0;
+                                continue;
+
+                            }
+                        }
+                        //iteracion para hallar en el diccionario las descripciones segun las corrientes del rango hallado en la iteracion anterior  y escribir los resultados
+                        for (int x = 0; x < result_list.size(); x++) {
+                            Integer text = result_list.get(x);
+                            if (x == 0) {
+                                resultadocobre.setText(text + "A " + corrientes_barras.get(text));
+                            } else {
+                                resultadocobre.setText(resultadocobre.getText() + "\n" + text + "A " + corrientes_barras.get(text));
+                            }
+                        }
+                    } else {
+                        //definir limite superiro e inferior segunla corriente que sel usuario ingreso en este caso para mayores de 1200
                         nsup = Double.parseDouble(valcurrent.getText().toString()) + 500;
-                        ninf = Double.parseDouble(valcurrent.getText().toString());
-                    }
-                    Toast toast1 = Toast.makeText(getApplicationContext(), Double.toString(nsup)+Double.toString(ninf), Toast.LENGTH_SHORT);
-                    toast1.show();
-                    for (int x = 0; x < corrientes_list.size(); x++) {
-                        Integer it = corrientes_list.get(x);
-                        if ((it >= ninf) && (it <= nsup)) {
-                            result_list.add(Integer.toString(corrientes_list.get(x)));
-                            it = 0;
-                        } else {
-                            it = 0;
-                            continue;
+                        ninf = Double.parseDouble(valcurrent.getText().toString())-100;
 
-                        }
-                    }
-                    for (int x = 0; x < corrientes_list.size(); x++) {
-                        Integer text = corrientes_list.get(x);
-                        if (x == 0) {
-                            resultadocobre.setText(text + " " + corrientes_barras.get(text));
-                        } else {
-                            resultadocobre.setText(resultadocobre.getText() + "\n" + text + " " + corrientes_barras.get(text));
-                        }
+                        //iteracion para hallar cuales son las corrientes que se encuentran en el rango de la corriente del usuario
+                        for (int x = 0; x < corrientes_list.size(); x++) {
+                            Integer it = corrientes_list.get(x);
+                            if ((it >= ninf) && (it <= nsup)) {
+                                result_list.add((corrientes_list.get(x)));
+                                it = 0;
+                            } else {
+                                it = 0;
+                                continue;
 
+                            }
+                        }
+                        //iteracion para hallar en el diccionario las descripciones segun las corrientes del rango hallado en la iteracion anterior y escribir los resultados
+                        for (int x = 0; x < result_list.size(); x++) {
+                            Integer text = result_list.get(x);
+                            if (x == 0) {
+                                resultadocobre.setText(text + "A " + corrientes_barras.get(text));
+                            } else {
+                                resultadocobre.setText(resultadocobre.getText() + "\n" + text + "A " + corrientes_barras.get(text));
+                            }
+                        }
                     }
                 }
-
-
+            }
+        });
+        //metodo para borrar los resultados y el valor de corriente ingresado
+        borrarcu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                valcurrent.setText(String.valueOf(""));
+                resultadocobre.setText(String.valueOf(""));
             }
         });
 
 
 
-
-
     }
-    public void calcular (View view){
-
-    }
-
+    // metodo para regresar a lapagina principal de la aplicacion
     public void Regresarcobre(View view){
         Intent regresarcobre1 = new Intent(this,vistaPrincipal.class);
         startActivity(regresarcobre1);
