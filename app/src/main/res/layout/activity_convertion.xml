@@ -27,11 +27,12 @@
         android:id="@+id/textView6"
         android:layout_width="210dp"
         android:layout_height="0dp"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="128dp"
         android:text="Calculo Potencia"
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -40,14 +41,14 @@
         android:id="@+id/textView7"
         android:layout_width="80dp"
         android:layout_height="50dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
         android:text="Volver"
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/volver"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/adView" />
 
     <TextView
         android:id="@+id/label_fp"
@@ -183,13 +184,24 @@
         android:id="@+id/volver"
         android:layout_width="70dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="16dp"
         android:background="@drawable/regresar"
         android:backgroundTint="@color/teal_700"
         android:onClick="Regresar"
         android:textSize="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/adView" />
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            app:adSize="BANNER"
+            app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+            tools:ignore="MissingConstraints"></com.google.android.gms.ads.AdView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -147,7 +147,6 @@
         android:layout_width="80dp"
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="17dp"
         android:layout_marginEnd="228dp"
         android:text="Volver"
         android:textColor="@color/black"
@@ -155,14 +154,13 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/volvercobre"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/adView2" />
 
     <Button
         android:id="@+id/volvercobre"
         android:layout_width="70dp"
         android:layout_height="50dp"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/regresar"
         android:backgroundTint="@color/teal_700"
@@ -170,7 +168,7 @@
         android:textSize="16dp"
         app:layout_constraintEnd_toStartOf="@+id/textViewcu1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/adView2" />
 
     <TextView
         android:id="@+id/resulttexview"
@@ -188,5 +186,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/borrarcu1" />
 
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        tools:ignore="MissingConstraints"></com.google.android.gms.ads.AdView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
