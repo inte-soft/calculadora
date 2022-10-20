@@ -288,6 +288,8 @@ public class CalculoCobre extends AppCompatActivity {
 
                             }
                         }
+                        // organizacion de resultados en orden ascendentes.
+                        Collections.sort(result_list);
                         //iteracion para hallar en el diccionario las descripciones segun las corrientes del rango hallado en la iteracion anterior  y escribir los resultados
                         for (int x = 0; x < result_list.size(); x++) {
                             Integer text = result_list.get(x);
