@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo_3"
+    android:background="#201F1F"
     tools:context=".vistaPrincipal">
 
     <TextView
@@ -15,8 +15,9 @@
         android:layout_marginLeft="35dp"
         android:layout_marginTop="50dp"
         android:paddingLeft="20dp"
-        android:text="Que calculo deseas hacer hoy"
-        android:textColor="@color/black"
+        android:text="Elige una Calculadora"
+        android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="24dp"
         android:textStyle="bold" />
 
@@ -27,7 +28,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="45dp"
         android:layout_marginTop="135dp"
-        android:backgroundTint="@color/teal_700"
+        android:backgroundTint="#1C6DAE"
         android:onClick="Cu"
         android:text="cobre"
         android:textSize="16dp"
@@ -40,7 +41,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="45dp"
         android:layout_marginTop="215dp"
-        android:backgroundTint="@color/teal_700"
+        android:backgroundTint="#1C6DAE"
         android:onClick="CalculoPotencia"
         android:text="potencia"
         android:textSize="16dp" />
@@ -52,7 +53,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="45dp"
         android:layout_marginTop="295dp"
-        android:backgroundTint="@color/teal_700"
+        android:backgroundTint="#1C6DAE"
         android:onClick="totalizador"
         android:text="Totalizadores"
         android:textSize="16dp"
@@ -83,7 +84,5 @@
         android:text="transformadores"
         android:textSize="16dp"
         android:visibility="invisible" />
-
-
 
 </RelativeLayout>
