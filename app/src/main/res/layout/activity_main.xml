@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo_3"
+    android:background="#201F1F"
     tools:context=".MainActivity">
 
     <TextView
@@ -16,8 +16,10 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="15dp"
-        android:text="Bienvenidos a ElectrCal"
-        android:textColor="@color/black"
+        android:text="Bienvenidos a Elecalc"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
         android:textSize="24dp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -28,13 +30,14 @@
         android:id="@+id/textView2"
         android:layout_width="150dp"
         android:layout_height="40dp"
-        android:layout_marginStart="130dp"
         android:layout_marginTop="740dp"
         android:layout_marginEnd="15dp"
-        android:layout_marginBottom="15dp"
         android:text="from inte-soft"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="18dp"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,13 +45,14 @@
         android:id="@+id/textView3"
         android:layout_width="95dp"
         android:layout_height="40dp"
-        android:layout_marginStart="145dp"
         android:layout_marginTop="760dp"
         android:layout_marginEnd="15dp"
-        android:layout_marginBottom="15dp"
-        android:text="version 0.1"
-        android:textColor="@color/black"
+        android:text="version 1.0"
+        android:textColor="@color/white"
         android:textSize="18dp"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,14 +63,35 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="279dp"
         android:layout_marginEnd="10dp"
-        android:backgroundTint="@color/teal_700"
-        android:onClick="siguiente"
+        android:backgroundTint="#1C6DAE"
         android:text="iniciar"
         android:textColor="@color/black"
         android:textSize="25dp"
         android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="119dp"
+        android:layout_height="122dp"
+        android:layout_centerInParent="true"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="96dp"
+        android:layout_height="76dp"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="168dp"
+        android:layout_marginBottom="105dp" />
+
+</RelativeLayout>

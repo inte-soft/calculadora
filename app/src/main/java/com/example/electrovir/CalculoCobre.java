@@ -285,7 +285,6 @@ public class CalculoCobre extends AppCompatActivity {
                             } else {
                                 it = 0;
                                 continue;
-
                             }
                         }
                         // organizacion de resultados en orden ascendentes.
