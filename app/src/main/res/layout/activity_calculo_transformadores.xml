@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo_3"
+    android:background=""
     tools:context=".CalculoTransformadores">
 
     <Button
@@ -12,7 +12,6 @@
         android:layout_width="70dp"
         android:layout_height="50dp"
         android:layout_marginTop="735dp"
-        android:background="@drawable/regresar"
         android:backgroundTint="@color/teal_700"
         android:onClick="Regresar4"
         android:textSize="16dp" />

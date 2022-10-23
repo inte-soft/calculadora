@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo_3"
+    android:background=""
     tools:context=".CalculoVentilacion">
 
     <Button
@@ -13,7 +13,6 @@
         android:layout_height="50dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="735dp"
-        android:background="@drawable/regresar"
         android:backgroundTint="@color/teal_700"
         android:onClick="Regresar1"
         android:textSize="16dp" />
