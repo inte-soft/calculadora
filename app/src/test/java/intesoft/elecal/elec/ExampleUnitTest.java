@@ -1,4 +1,4 @@
-package com.example.electrovir;
+package intesoft.elecal.elec;
 
 import org.junit.Test;
 

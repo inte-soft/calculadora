@@ -1,4 +1,4 @@
-package com.example.electrovir;
+package intesoft.elecal.elec;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +15,7 @@ import java.util.*;
 import android.widget.*;
 import java.util.Hashtable;
 
+import com.example.electrovir.R;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -116,6 +117,7 @@ public class CalculoCobre extends AppCompatActivity {
         corrientes_barras .put(162,"20x2 1 Barra");
         corrientes_barras .put(182,"12x2 2 Barra");
         corrientes_barras .put(204,"20x3 1 Barra");
+        corrientes_barras .put(218,"15x5 1 Barra");
         corrientes_barras .put(216,"12x2 3 Barra");
         corrientes_barras .put(274,"20x5 1 Barra");
         corrientes_barras .put(245,"25x3 1 Barra");

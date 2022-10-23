@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#201F1F"
-    tools:context=".vistaPrincipal">
+    android:background="?android:attr/textColorPrimaryInverse"
+    tools:context="intesoft.elecal.elec.vistaPrincipal">
 
     <TextView
         android:id="@+id/titulo"
@@ -17,7 +17,7 @@
         android:paddingLeft="20dp"
         android:text="Elige una Calculadora"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="?attr/actionMenuTextColor"
         android:textSize="24dp"
         android:textStyle="bold" />
 
@@ -29,9 +29,9 @@
         android:layout_marginLeft="45dp"
         android:layout_marginTop="135dp"
         android:backgroundTint="#1C6DAE"
-        android:textColor="@color/white"
         android:onClick="Cu"
         android:text="Calculo de Cobre"
+        android:textColor="@color/white"
         android:textSize="16dp"
         android:visibility="visible" />
 
@@ -43,9 +43,9 @@
         android:layout_marginLeft="45dp"
         android:layout_marginTop="215dp"
         android:backgroundTint="#1C6DAE"
-        android:textColor="@color/white"
         android:onClick="CalculoPotencia"
         android:text="Calculo de potencia"
+        android:textColor="@color/white"
         android:textSize="16dp" />
 
     <Button
@@ -56,9 +56,9 @@
         android:layout_marginLeft="45dp"
         android:layout_marginTop="295dp"
         android:backgroundTint="#1C6DAE"
-        android:textColor="@color/white"
         android:onClick="totalizador"
         android:text="Calculo de Totalizadores"
+        android:textColor="@color/white"
         android:textSize="16dp"
         android:visibility="visible" />
 

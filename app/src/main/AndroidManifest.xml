@@ -20,28 +20,19 @@
             android:value="ca-app-pub-2399220603418162~2533163643"/>
 
         <activity
-            android:name=".CalculoCobre"
+            android:name="intesoft.elecal.elec.CalculoCobre"
             android:exported="false" />
         <activity
-            android:name=".CalculoTransformadores"
+            android:name="intesoft.elecal.elec.Calculototalizadores"
             android:exported="false" />
         <activity
-            android:name=".CalculoCondensadores"
+            android:name="intesoft.elecal.elec.vistaPrincipal"
             android:exported="false" />
         <activity
-            android:name=".Calculototalizadores"
+            android:name="intesoft.elecal.elec.Convertion"
             android:exported="false" />
         <activity
-            android:name=".CalculoVentilacion"
-            android:exported="false" />
-        <activity
-            android:name=".vistaPrincipal"
-            android:exported="false" />
-        <activity
-            android:name=".Convertion"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name="intesoft.elecal.elec.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             >

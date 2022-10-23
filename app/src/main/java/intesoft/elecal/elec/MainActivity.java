@@ -1,12 +1,11 @@
-package com.example.electrovir;
+package intesoft.elecal.elec;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+
+import com.example.electrovir.R;
 
 import java.util.Timer;
 import java.util.TimerTask;

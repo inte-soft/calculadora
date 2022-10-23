@@ -1,10 +1,12 @@
-package com.example.electrovir;
+package intesoft.elecal.elec;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.electrovir.R;
 
 public class vistaPrincipal extends AppCompatActivity {
 
@@ -30,17 +32,7 @@ public class vistaPrincipal extends AppCompatActivity {
         Intent siguiente2 = new Intent(this,Calculototalizadores.class);
         startActivity(siguiente2);
         finish();
+
     }
-    //Metodo para llamar una activity banco condensadores
-    public void condensador(View view){
-        Intent banco = new Intent(this,CalculoVentilacion.class);
-        startActivity(banco);
-        finish();
-    }
-    //Metodo para llamar una activity transformadores
-    public void Transformador(View view){
-        Intent trafo = new Intent(this,CalculoVentilacion.class);
-        startActivity(trafo);
-        finish();
-    }
+
 }
