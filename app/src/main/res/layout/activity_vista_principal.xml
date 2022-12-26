@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?android:attr/textColorPrimaryInverse"
+    android:background="?attr/colorBackgroundFloating"
     tools:context="intesoft.elecal.elec.vistaPrincipal">
 
     <TextView
@@ -44,7 +44,7 @@
         android:layout_marginTop="215dp"
         android:backgroundTint="#1C6DAE"
         android:onClick="CalculoPotencia"
-        android:text="Calculo de potencia"
+        android:text="CONVERSION DE POTENCIA"
         android:textColor="@color/white"
         android:textSize="16dp" />
 
